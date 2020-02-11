@@ -4,3 +4,11 @@
 // `nodeIntegration` is turned off. Use `preload.js` to
 // selectively enable features needed in the rendering
 // process.
+
+function loadMediaDevices () {
+	navigator.mediaDevices.enumerateDevices().then((devices) => {
+		document.getElementById("mediaDevices").innerHTML = JSON.stringify(devices, null,2)
+	})
+}
+
+loadMediaDevices()
